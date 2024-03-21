@@ -31,6 +31,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         mnuCadastro = new javax.swing.JMenu();
         cadastroProduto = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        mnuCaixa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,7 +58,16 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuCadastro);
 
-        jMenu2.setText("Venda");
+        jMenu2.setText("Abrir");
+
+        mnuCaixa.setText("Caixa");
+        mnuCaixa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuCaixaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(mnuCaixa);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -82,6 +92,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
         telaInterna.setVisible(true);
         telaInterna.setClosable(true);
     }//GEN-LAST:event_cadastroProdutoActionPerformed
+
+    private void mnuCaixaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuCaixaActionPerformed
+        TelaCaixa telaInterna = new TelaCaixa();
+        desktop.add(telaInterna);
+        telaInterna.setClosable(true);
+        telaInterna.setVisible(true);
+        
+    }//GEN-LAST:event_mnuCaixaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -124,5 +142,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu mnuCadastro;
+    private javax.swing.JMenuItem mnuCaixa;
     // End of variables declaration//GEN-END:variables
 }
