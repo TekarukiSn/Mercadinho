@@ -12,4 +12,13 @@ public class BancoDeDados {
     public ArrayList<Produto> getListaProdutos(){
         return listaProdutos;
     }
+    
+    public float getPrecoByName(String nomeProduto){
+        for(Produto produto : listaProdutos){
+            if(produto.getNome().equals(nomeProduto)){
+                return produto.getPreco();
+            }
+        }
+        return -1;
+    }
 }
